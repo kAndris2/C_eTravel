@@ -6,28 +6,20 @@ namespace eTravel
 {
     class PassengerData
     {
-        int StopNumber { get; set; }
-        DateTime Date { get; set; }
-        int CardId { get; set; }
-        String Type { get; set; }
-        int Ticket { get; set; }
-        DateTime Validity { get; set; }
+        public int StopNumber { get; set; }
+        public DateTime BoardingDate { get; set; }
+        public int CardId { get; set; }
+        public String Type { get; set; }
+        public int? Ticket { get; set; }
+        public DateTime? Validity { get; set; }
 
-        public PassengerData(int stop, DateTime date, int card_id, string type, int ticket)
+        public PassengerData(int stop, DateTime date, int card_id, string type, int? ticket, DateTime? validity)
         {
             StopNumber = stop;
-            Date = date;
+            BoardingDate = date;
             CardId = card_id;
             Type = type;
             Ticket = ticket;
-        }
-
-        public PassengerData(int stop, DateTime date, int card_id, string type, DateTime validity)
-        {
-            StopNumber = stop;
-            Date = date;
-            CardId = card_id;
-            Type = type;
             Validity = validity;
         }
     }
