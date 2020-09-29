@@ -30,7 +30,6 @@ namespace eTravel
                         (
                             Int32.Parse(lineInfo[0]),
                             DateTime.ParseExact(lineInfo[1].Split("-")[0], "yyyyMMdd", CultureInfo.InvariantCulture),
-                            //DateTime.ParseExact(lineInfo[1], "yyyyMMdd-HHmm", CultureInfo.InvariantCulture),
                             Int32.Parse(lineInfo[2]),
                             lineInfo[3],
                             check == true ? int.Parse(lineInfo[4]) : (int?) null,
