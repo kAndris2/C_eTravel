@@ -6,14 +6,20 @@ using System.IO;
 
 namespace eTravel
 {
-    class DataReader
+    class DataManager
     {
-        const String FILENAME = "utasadat.txt";
+        const String READ = "utasadat.txt";
+        const String WRITE = "figyelmeztetes.txt";
+
+        public void Write(string[] lines)
+        {
+            File.WriteAllLines(WRITE, lines);
+        }
 
         public List<PassengerData> GetData()
         {
             List<PassengerData> data = new List<PassengerData>();
-            foreach (string line in Read(FILENAME))
+            foreach (string line in Read(READ))
             {
                 string[] lineInfo = line.Split(" ");
                 bool check = lineInfo[4].Length < 8;
